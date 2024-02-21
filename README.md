@@ -1,63 +1,3 @@
-# ✨ So you want to run an audit
-
-This `README.md` contains a set of checklists for our audit collaboration.
-
-Your audit will use two repos: 
-- **an _audit_ repo** (this one), which is used for scoping your audit and for providing information to wardens
-- **a _findings_ repo**, where issues are submitted (shared with you after the audit) 
-
-Ultimately, when we launch the audit, this repo will be made public and will contain the smart contracts to be reviewed and all the information needed for audit participants. The findings repo will be made public after the audit report is published and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
-
----
-
-# Audit setup
-
-## 🐺 C4: Set up repos
-- [ ] Create a new private repo named `YYYY-MM-sponsorname` using this repo as a template.
-- [ ] Rename this repo to reflect audit date (if applicable)
-- [ ] Rename auditt H1 below
-- [ ] Update pot sizes
-- [ ] Fill in start and end times in audit bullets below
-- [ ] Add link to submission form in audit details below
-- [ ] Add the information from the scoping form to the "Scoping Details" section at the bottom of this readme.
-- [ ] Add matching info to the Code4rena site
-- [ ] Add sponsor to this private repo with 'maintain' level access.
-- [ ] Send the sponsor contact the url for this repo to follow the instructions below and add contracts here. 
-- [ ] Delete this checklist.
-
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this `README.md` file
-
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. (Here are two well-constructed examples: [Ajna Protocol](https://github.com/code-423n4/2023-05-ajna) and [Maia DAO Ecosystem](https://github.com/code-423n4/2023-05-maia))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
-
-## ⭐️ Sponsor: Final touches
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Review and confirm the list of in-scope files in the `scope.txt` file in this directory.  Any files not listed as "in scope" will be considered out of scope for the purposes of judging, even if the file will be part of the deployed contracts.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
 # Spectra audit details
 - Total Prize Pool: $36500 in USDC
   - HM awards: $24100 in USDC
@@ -75,7 +15,7 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 - Starts February 23, 2024 20:00 UTC
 - Ends March 01, 2024 20:00 UTC
 
-## Automated Findings / Publicly Known Issues
+### Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-02-spectra/blob/main/4naly3er-report.md).
 
@@ -83,58 +23,142 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
+#### Code Unreachable
+
+Custom errors are implemented for scenarios that theoretically should not occur and could be harmful for the end user. These errors cater to instances where code is considered unreachable. However, in cases of invariant violation, the code might be accessible. An example of this is found in the `_computeYield` method of the `PrincipalTokenUtil` library.
+
+#### Reverting Transactions When PT rate is Zero
+
+The PT rate accounts for a negative rate on the IBT (Interest Bearing Token). A decrease in the PT rate occurs when the IBT experiences a negative rate. The PT rate does not increase; it can only be zero if the IBT rate is also zero, indicating no claimable underlying assets in the IBT (e.g., if the IBT is drained due to a hack), rendering the IBT worthless and prohibiting interaction with the protocol.
+
+#### Curve introduces imprecisions
+
+The Curve AMM introduces some imprecisions (noise fee) that is taken into account in the Router but can lead to imprecisions in the `previewRate` of the Router. 
+
+#### The Principal Token contract expects a compliant ERC4626 and non malicious IBT 
+
+The protocol relies on trusting the integrated IBT. A malicious actor could create a malicious compliant ([EIP4626](https://eips.ethereum.org/EIPS/eip-4626)) IBT that could break the protocol and might result in a loss of funds for the users.
+
+#### Access Control Trust Model
+
+Certain functions are secured with an OpenZeppelin Access Manager contract, enabling centralized role management distributed to DAO accounts.
+
+Some IBTs are elligible for additional rewards, and the DAO can claim these rewards and redistribute them to the users. The DAO will be able for such IBTs to setup a reward proxy on top of the PT contract to be able to claim the rewards. The DAO is the only entity that can perform these operations.
 
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+
+Spectra is a permissionless interest rate derivatives protocol for DeFi. The protocol allows to split the yield generated by an Interest Bearing Token (IBT) from the principal asset. The IBT is deposited in the protocol and the user receives Principal Tokens (PT) and Yield Tokens (YT) in return. The PT represents the principal asset and the YT represents the yield generated by the IBT. Holders of the yield token for a specific IBT can claim the yield generated by the corresponding deposited IBTs during the time they hold the YT. 
+
+## Architecture Overview
+
+![Spectra Contracts Architecture](https://github.com/code-423n4/2024-02-spectra/blob/main/spectra_contracts_architecture.png)
+
+#### Principal Token
+
+> *[PrincipalToken](https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToken.sol)*
+
+This is the core contract of Spectra. The Principal Token is [EIP-5095](https://eips.ethereum.org/EIPS/eip-5095) and [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612) compliant. Users can deposit an [EIP-4626](https://eips.ethereum.org/EIPS/eip-4626) IBT or the underlying token of that IBT and receive Principal Tokens (PT) and Yield Tokens (YT). The PT contract holds the logic that separates the yield generated from the principal asset deposited in the IBT.
+
+#### Yield Token
+
+> *[YieldToken](https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/YieldToken.sol)*
+
+This contract represents the Yield Token (YT). The YT is an [EIP-20](https://eips.ethereum.org/EIPS/eip-20) token and follows the [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612) standard. The same amount of PT and YT is minted upon depositing into the protocol (`PrincipalToken.deposit`, `PrincipalToken.depositIBT`). The YT captures the yield generated by the deposited principal. Holding the YT allows the user to claim the corresponding amount of yield generated by the IBTs deposited in the associated PT contract.
+
+#### Access Manager and Ownable
+
+The Spectra protocol uses the [OpenZeppelin AccessManager](https://docs.openzeppelin.com/contracts/5.x/api/access#accessmanager) to manage the access control of the different protected functions.
+
+We thus modified the [Openzepellin Transparent Proxy](https://docs.openzeppelin.com/contracts/5.x/api/proxy#TransparentUpgradeableProxy), [Beacon Proxy](https://docs.openzeppelin.com/contracts/5.x/api/proxy#BeaconProxy) and [Proxy Admin](https://docs.openzeppelin.com/contracts/5.x/api/proxy#ProxyAdmin) of OpenZeppelin to leverage the access manager instead of the Ownable pattern for the upgrade and admin functions.
 
 ## Links
 
-- **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
+- [Spectra Website](https://spectra.finance/)
+- [Developer Documentation](https://dev.spectra.finance/)
+- [Twitter](https://twitter.com/spectra_finance)
+- [Discord](https://discord.gg/BNZtnNFevH) 
 
 
 # Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
+| Contract                                        | SLOC | Purpose                                                                                                                                                                                                                                | Libraries used                         |
+| ----------------------------------------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| [src/proxy/AMBeacon.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/proxy/AMBeacon.sol)                      | 24   | Modified from Openzeppelin Beacon using Openzeppelin [Access Manager](https://docs.openzeppelin.com/contracts/5.x/api/access#AccessManager) instead of Ownable                                                                         | openzeppelin                           |
+| [src/proxy/AMProxyAdmin.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/proxy/AMProxyAdmin.sol)                  | 14   | Modified from [Openzeppelin ProxyAdmin](https://docs.openzeppelin.com/contracts/5.x/api/proxy#ProxyAdmin) using Openzeppelin [Access Manager](https://docs.openzeppelin.com/contracts/5.x/api/access#AccessManager) instead of Ownable | openzeppelin                           |
+| [src/proxy/AMTransparentUpgradeableProxy.sol]() | 42   | Modified from [Openzeppelin TransparentUpgradeableProxy](https://docs.openzeppelin.com/contracts/5.x/api/proxy#TransparentUpgradeableProxy) using AMProxyAdmin instead of   Ownable                                                    | openzeppelin                           |
+| [src/tokens/PrincipalToken.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToken.sol)               | 649  | The Principal Token is the main contract of Spectra. Users deposit their IBT in exchange for Principal Token and Yield Token                                                                                                           | openzeppelin, openzeppelin-upgradeable |
+| [src/tokens/YieldToken.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/YieldToken.sol)                   | 73   | Holders of the yield token for a specific IBT can claim the yield generated by the corresponding deposited IBTs                                                                                                                        | openzeppelin                           |
+| [src/libraries/PrincipalTokenUtil.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/libraries/PrincipalTokenUtil.sol)        | 142  | Utility library for the Principal Token contract                                                                                                                                                                                       | openzeppelin, openzeppelin-upgradeable |
+| [src/libraries/RayMath.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/libraries/RayMath.sol)                   | 32   | Library for number conversions from decimals between 6 and 18 to 27 decimals  (ray)                                                                                                                                                 |                                        |
 
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+The files listed above as in scope are the core components of the Spectra protocol. The following files are not in scope for this audit and represent the periphery contracts and libraries that are not directly involved in the core functionality of the protocol:
+- [src/factory/Factory.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/factory/Factory.sol)
+- [src/Registry.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/Registry.sol)
+- [src/router/](https://github.com/code-423n4/2024-02-spectra/blob/main/src/router)
+- [src/oracle/RateOracle.sol](https://github.com/code-423n4/2024-02-spectra/blob/main/src/oracle/RateOracle.sol)
+
+
+Anything in [interfaces](https://github.com/code-423n4/2024-02-spectra/blob/main/src/interfaces), [test](https://github.com/code-423n4/2024-02-spectra/blob/main/test), [mocks](https://github.com/code-423n4/2024-02-spectra/blob/main/src/mocks), or [scripts](https://github.com/code-423n4/2024-02-spectra/blob/main/script) is out of scope.
 
 # Additional Context
 
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
-- [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
-- [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
-- [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
-- [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format: 
-  - `Contract1`: Should comply with `ERC/EIPX`
-  - `Contract2`: Should comply with `ERC/EIPY`
+- The protocol is expected to interact with any [ERC4626](https://eips.ethereum.org/EIPS/eip-4626) compliant vault. 
+
+
+- The following roles are defined with the [OpenZeppelin AccessManager](https://docs.openzeppelin.com/contracts/5.x/api/access#accessmanager):
+  - `ADMIN_ROLE` - roleId `0` - the Access Manager super admin. Can grant and revoke any role. Set by default in the Access Manager constructor.
+  - `UPGRADER_ROLE` - roleId `1` - the users who can upgrade the protocol implementations.
+  - `PAUSER_ROLE` - roleId `2` - the DAO address that can pause the protocol (in case of emergency).
+  - `FEE_SETTER_ROLE` - roleId `3` - the role that can change the fees in the protocol.
+  - `REGISTRY_ROLE` - roleId `4` - the users who can call the registry contract to register new contracts addresses.
+  - `REWARDS_HARVESTER_ROLE` - roleId `5` - the DAO address that can harvest the additional rewards generated by the IBT holdings of the protocol (redistributed to users).
+  - `REWARDS_PROXY_SETTER_ROLE` - roleId `6` - the DAO address that can setup a rewards proxy to be able to claim IBT rewards.
+  
+- Spectra may be deployed to Ethereum, Polygon, Arbitrum
+
+- EIP Compliance:
+  - `PrincipalToken.sol` : Should comply with `ERC5095` and `ERC2612`
+  - `YieldToken.sol` : Should comply with `ERC20` and `ERC2612`
 
 ## Attack ideas (Where to look for bugs)
-*List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
+
+- Decimals imprecisions should always benefit the protocol and no user should be able to extract extra value.
+- YT flash swaps allow for leveraged operations check the potential price impact in the Curve Pool.
+- Proxy Admin and Beacon are a modified version of Openzepelin origin contract replacin OZ Ownable with OZ Access Managed. Check if this modification can be harmful outside of our trust model ([see above](https://www.notion.so/V2-C4-dfec6a803eac4214b2a63e406250a172?pvs=21)).
+- Imprecisions and rounding errors.
+- Manipulation of the IBT rate.
+- Mechanism of negative rates and the impact on the PT rate. [See docs](https://dev.spectra.finance/technical-reference/yield-calculations)
+
 
 ## Main invariants
-*Describe the project's main invariants (properties that should NEVER EVER be broken).*
+
+**IBT rate is only updated upon user interactions with our protocol**
+
+**PT rate is only updated after an accounted negative rate change on the IBT rate**
+
+**PT and its YT should have an equal supply at all times**
+
+**PT rate should not increase**
+
+`ptRateOfUser(u) ≥ ptRate` for all `u` in `users` with `users` being all the users that deposited in the PT.
+
+**Accounted IBT rate cannot decrease without impacting PT rate**
+
+If the protocol records an IBT rate decrease, the PT rate has to decrease to account for the negative rate.
+
+**Principal Token is ERC5095**
+
+All [EIP-5095](https://eips.ethereum.org/EIPS/eip-5095) invariants should hold such as `previewRedeem ≥ redeem`.
+
+**Principal Token deposit**
+
+`previewDeposit ≤ deposit` : the preview of shares minted upon depositing should be less than or equal to the actual shares minted.
+
 
 ## Scoping Details 
 [ ⭐️ SPONSORS: please confirm/edit the information below. ]
@@ -161,10 +185,62 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+## Installation
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+Follow [this link](https://book.getfoundry.sh/getting-started/installation) to install Foundry, Forge, Cast and Anvil.
 
-## Miscellaneous
+Do not forget to update Foundry regularly with the following command
 
-Employees of [SPONSOR NAME] and employees' family members are ineligible to participate in this audit.
+```properties
+foundryup
+```
+
+Similarly for forge-std run
+
+```properties
+forge update lib/forge-std
+```
+
+## Submodules
+
+Run below command to include/update all git submodules like openzeppelin contracts, forge-std etc (`lib/`)
+
+```properties
+git submodule update --init --recursive
+```
+
+To get the `node_modules/` directory run
+
+```properties
+yarn
+```
+
+## Compilation
+
+To compile your contracts run
+
+```properties
+forge build
+```
+
+## Testing
+
+> ⚠️ **Note**: Before running the tests, you need to setup an RPC URL for the Goerli network. You can create a free RPC url at https://www.alchemy.com. Once you have it you can create a `.env` file copying the `.env.example` file (`cp .env.example .env`) and replacing the `GOERLI_RPC_URL` with your own.
+
+
+
+Run your tests with
+
+```properties
+forge test
+```
+
+Find more information on testing with Foundry [here](https://book.getfoundry.sh/forge/tests)
+
+Note: tests might take a long time due to the number of fuzz runs. You can modify the `runs` parameter under the `[fuzz]` section of the `foundry.toml` file as per your needs.
+
+
+## Slither
+
+Running slither should produce 512 results. We have reviewed all of these results on our end, and have not found them to be issues. Please do not submit slither results as findings unless you have confirmed there is a specific exploitable issue resulting in negative consequences linked to the result.
+
