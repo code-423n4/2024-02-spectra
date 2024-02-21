@@ -59,14 +59,14 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 ---
 
 # Spectra audit details
-- Total Prize Pool: $36500 in USDC
-  - HM awards: $24100 in USDC
-  - Analysis awards: $1500 in USDC
+- Total Prize Pool: $36,500 in USDC
+  - HM awards: $24,000 in USDC
+  - Analysis awards: $1,500 in USDC
   - QA awards: $700 in USDC
-  - Bot Race awards: $2200 in USDC
+  - Bot Race awards: $2,200 in USDC
   - Gas awards: $700 in USDC
-  - Judge awards: $4500 in USDC
-  - Lookout awards: $2,300 in USDC 
+  - Judge awards: $4,500 in USDC
+  - Lookout awards: $2,400 in USDC 
   - Scout awards: $500 in USDC
  
 - Join [C4 Discord](https://discord.gg/code4rena) to register
