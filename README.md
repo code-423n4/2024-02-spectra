@@ -66,20 +66,20 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
   - Bot Race awards: $2200 in USDC
   - Gas awards: $700 in USDC
   - Judge awards: $4500 in USDC
-  - Lookout awards: XXX XXX USDC (Notion: Sum of Pre-sort fee + Pre-sort early bonus)
+  - Lookout awards: $2,300 in USDC 
   - Scout awards: $500 in USDC
  
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-02-spectra/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts February 27, 2024 20:00 UTC
-- Ends February 27, 2024 20:00 UTC
+- Starts February 23, 2024 20:00 UTC
+- Ends March 01, 2024 20:00 UTC
 
 ## Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-02-spectra/blob/main/4naly3er-report.md).
 
-Automated findings output for the audit can be found [here](https://github.com/code-423n4/YYYY-MM-contest-candidate/blob/main/bot-report.md) within 24 hours of audit opening.
+Automated findings output for the audit can be found [here](https://github.com/code-423n4/2024-02-spectra/blob/main/bot-report.md) within 24 hours of audit opening.
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
@@ -141,20 +141,20 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 ```
 - If you have a public code repo, please share it here:  
-- How many contracts are in scope?:   
-- Total SLoC for these contracts?:  
-- How many external imports are there?:  
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  
-- Does most of your code generally use composition or inheritance?:   
-- How many external calls?:   
-- What is the overall line coverage percentage provided by your tests?:
-- Is this an upgrade of an existing system?:
-- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): 
+- How many contracts are in scope?:   7
+- Total SLoC for these contracts?:  976
+- How many external imports are there?: 15  
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  2
+- Does most of your code generally use composition or inheritance?:   Inheritance
+- How many external calls?:   5
+- What is the overall line coverage percentage provided by your tests?: 96
+- Is this an upgrade of an existing system?: False
+- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): ERC-20 Token
 - Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   
 - Please describe required context:   
-- Does it use an oracle?:  
+- Does it use an oracle?:  No
 - Describe any novel or unique curve logic or mathematical models your code uses: 
-- Is this either a fork of or an alternate implementation of another project?:   
+- Is this either a fork of or an alternate implementation of another project?:   No
 - Does it use a side-chain?:
 - Describe any specific areas you would like addressed:
 ```
