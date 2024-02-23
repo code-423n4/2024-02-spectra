@@ -54,7 +54,7 @@ Spectra is a permissionless interest rate derivatives protocol for DeFi. The pro
 
 ## Architecture Overview
 
-![Spectra Contracts Architecture](https://github.com/code-423n4/2024-02-spectra/blob/main/spectra_contracts_architecture.png)
+![Spectra Contracts Architecture](https://github.com/code-423n4/2024-02-spectra/blob/main/spectra_contracts_architecture.png?raw=true)
 
 #### Principal Token
 
