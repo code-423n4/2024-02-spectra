@@ -1,0 +1,2098 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q1-2024 / spectra-feb23
+==============================================================
+
+[02/22/2024 19:06] knownfactc4_29311 (pinned)
+👋 Hello and welcome to the audit channel for the $36,500 in USDC **Spectra** audit!
+
+📆 Audit opens 02/23/2024 20:00 (20:00 UTC) and runs through 03/01/2024 20:00 (20:00 UTC) (7 days).
+
+Please give a warm welcome to the Spectra team, particularly @Gaspard, @Juan | Spectra, @Ulysse | Spectra, @Clem and @Yanis | Spectra, who will be available for questions either here in the channel or via a PRIVATE thread in the CET timezone.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-02-spectra
+
+{Reactions}
+👋 (14) 🚀 (2) 
+
+[02/22/2024 19:06] knownfactc4_29311
+Pinned a message.
+
+
+[02/23/2024 16:54] kartik_giri_47538
+👋 Hey spectra team, looking forward to work with you guys!
+
+{Reactions}
+🫡 (2) 
+
+[02/23/2024 20:02] C4 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Reminder: all [Automated Findings / Publicly Known Issues](https://github.com/code-423n4/2024-02-spectra?tab=readme-ov-file#automated-findings--publicly-known-issues) are out of scope and ineligible for awards.
+
+{Embed}
+https://github.com/code-423n4/2024-02-spectra?tab=readme-ov-file
+GitHub - code-423n4/2024-02-spectra
+Contribute to code-423n4/2024-02-spectra development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/1cf2bc9e-e83b-4f7f-a816-2260a9a4b2fa-0E61C
+
+
+[02/23/2024 20:06] thebrittfactor
+Pinned a message.
+
+
+[02/23/2024 20:15] 0xdemonnn
+Hello, has this codebase been audited before?
+
+{Reactions}
+⁉️ (3) 
+
+[02/23/2024 20:32] 33audits
+Hey @KnownFact | C4 I'd like to start a private thread with one of the devs could you set one up for me?
+
+{Reactions}
+🫡 
+
+[02/23/2024 20:33] dimulski
+you can do it yourself, click the thread button and just make it private, and tag the devs
+
+
+[02/23/2024 20:33] knownfactc4_29311
+^Yup, it's the + on the left of the text entry bar.
+
+
+[02/23/2024 20:34] 33audits
+Ahh yes I see it now missed the button before thanks!
+
+{Reactions}
+👌 
+
+[02/23/2024 20:42] sovaslava9
+@kartoonjoy | C4🎇🎇
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/telegram-cloud-photo-size-2-53889959303274-89DF5.jpg
+
+
+[02/23/2024 20:42] kartoonjoy
+Im about to put you on payroll. lol Thank you
+
+{Reactions}
+😆 (2) 🤣 (2) 
+
+[02/23/2024 20:59] knownfactc4_29311
+Should be displaying now I believe.
+
+
+[02/23/2024 21:00] knownfactc4_29311
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/fixed_spectra_image-9F4C1.JPG
+
+
+[02/23/2024 23:10] guy_in0xnito
+Why does the audit page doesn't display any information
+Instead says pvt audit
+But repo can be accessed
+
+
+[02/24/2024 02:38] bransonalien
+how to join?
+
+
+[02/24/2024 02:38] bransonalien
+new here
+
+
+[02/24/2024 03:02] 0xdemonnn
+any sponsor available?
+
+{Reactions}
+🫡 
+
+[02/24/2024 03:07] 0xdemonnn
+you can direct to audit page here https://discord.com/channels/810916927919620096/1209905089121357964/1210301614091669645
+
+
+[02/24/2024 04:36] la_yan
+Hello guys! Our v1 was called APWine and was audited by companies such as Chain Security! Regarding our recent v2, we’ve been audited by Pessimistic but we’re eager to see if you guys can find anything else:) do not hesitate to ask questions! Gl!
+
+{Reactions}
+👍 
+
+[02/24/2024 04:39] la_yan
+Do let us know if we can be of any help 😉
+
+{Reactions}
+hi5 (2) 
+
+[02/24/2024 04:41] la_yan
+Feel free to ask any question / dm us any time! Note that we will never dm you first
+
+{Reactions}
+👍 (2) 
+
+[02/24/2024 04:52] la_yan
+Brief intro about me just in case it might interest someone:
+I have studied cyber security in Switzerland (same as a few other members in the team), and I’ve joined Spectra approximately 2 years ago:) I am very enthusiastic about our v2 and I hope to be closer to the community than I was during v1. I would be flattered by any investigation / questions you people might have! Enjoy
+
+{Reactions}
+🙌 (5) 👍 (3) 🫕 👨‍💻 (3) 
+
+[02/24/2024 05:26] 0xdemonnn
+Here is my question previously @Yanis | Spectra
+
+
+[02/24/2024 05:36] guy_in0xnito
+Why use two types of math library  ? Especially the RAY (1e27)
+
+
+[02/24/2024 07:56] 14si2o_flint
+@Yanis | Spectra Hello!
+
+Two questions concerning PT testing: 
+
+1. In the setup() of the tests there is a reference made to line 35 of (https://github.com/foundry-rs/foundry/blob/master/evm/src/lib.rs ). The link isn't working anymore (I think they refactored the repo?) Do you have an updated link by chance or could you explain what is being done here?
+
+2. There are 5 PT.t.sol files, where each has slightly different deployment variables but also different sets of tests. Could you elaborate on thoughts behind this setup?
+
+
+[02/24/2024 08:45] sweetjimmy_
+here's his answer https://discord.com/channels/810916927919620096/1209905089121357964/1210807461217570826
+
+{Reactions}
+🫡 
+
+[02/24/2024 09:14] 0xdemonnn
+nice, i miss it lol thank youuu
+
+
+[02/24/2024 09:27] hisoul22
+what is `ibtRate`?
+
+
+[02/24/2024 09:28] 14si2o_flint
+The interest of the "Interest Bearing Token" I would presume?
+
+
+[02/24/2024 09:33] hisoul22
+https://dev.spectra.finance/technical-reference/yield-calculations
+
+{Embed}
+https://dev.spectra.finance/technical-reference/yield-calculations
+Yield Calculations
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/ukc6xl1tF73viQdIuOaw-98598.png
+
+
+[02/24/2024 09:34] hisoul22
+ibtRate (i.e. the price of the IBT in the underlying asset) .
+
+{Reactions}
+🫡 
+
+[02/24/2024 09:34] guy_in0xnito
+This codebase hasn't been audited right ?
+
+{Reactions}
+🤣 🫡 
+
+[02/24/2024 09:34] hisoul22
+has been audited by Pessimistic
+
+{Reactions}
+🫡 
+
+[02/24/2024 09:35] guy_in0xnito
+@Yanis | Spectra @Juan | Spectra  just pinning it here for you guys
+
+{Reactions}
+🫡 
+
+[02/24/2024 09:36] guy_in0xnito
+I don't see any links ? 
+Are those findings valid here ?
+
+
+[02/24/2024 09:37] dimulski
+design choice maybe?
+
+{Reactions}
+👍 
+
+[02/24/2024 09:38] sweetjimmy_
+i think no
+
+{Reactions}
+👍 
+
+[02/24/2024 09:43] la_yan
+This exact codebase has never been audited before:)
+
+
+[02/24/2024 09:44] 0xdemonnn
+alright, thank you :thankyou:
+
+{Reactions}
+🫡 
+
+[02/24/2024 09:45] sweetjimmy_
+oohh... 👀 gives me some hope
+
+{Reactions}
+🫡 
+
+[02/24/2024 09:45] la_yan
+We’ve decided to use Rays similarly to Aave for our rates computations to be more precise in our computations:)
+
+
+[02/24/2024 09:51] la_yan
+1. Indeed they have changed their book recently apparently! :/ i won’t send any links, that being said just type in the address 0x1804… in the search bar of the foundry book and you’ll find out what it is:)
+
+{Reactions}
+👍 
+
+[02/24/2024 09:57] la_yan
+2. When testing the PT there are different parameters that can vary (especially since we are now permissionless in terms of what ibt we integrate):)
+
+
+[02/24/2024 10:00] la_yan
+I think we’ve tried explaining it as simply as possible in our docs, if not please let us know! But indeed Interest Bearing Tokens are tokens that basically represent a deposit of liquidity + interest. There wasn’t much to be done with them except holding them in your wallet. Now, if it’s a 4626 (or if you make a 4626 adaptor for it🫢) you can integrate it in Spectra 🎉
+
+
+[02/24/2024 10:01] guy_in0xnito
+A user can deposit both principal or IBT. Right ?
+
+
+[02/24/2024 10:01] la_yan
+Oh and sorry to strictly answer to your question the ibtRate we derive from the IBT is simply the underlying value you can get for an ibt unit at time T:)
+
+
+[02/24/2024 10:02] hisoul22
+YES
+
+{Reactions}
+🫡 
+
+[02/24/2024 10:02] la_yan
+Strictly speaking, this codebase has never been audited🫡
+
+
+[02/24/2024 10:04] la_yan
+As of now we want users to be at least able to deposit using IBTs or the corresponding assets, but in the future we’d love to leverage our router to allow users to zap from and to any tokens 😉
+
+
+[02/24/2024 10:04] guy_in0xnito
+Why would  anyone deposit PT. Isn't it same like AAVE ?
+
+
+[02/24/2024 10:04] la_yan
+keep the good questions coming guys! Good luck
+
+
+[02/24/2024 10:05] la_yan
+Im not sure where you’d like to deposit PTs? I think what was asked was rather what can you deposit to mint PTs and YTs and as of now either IBTs or the corresponding assets;)
+
+
+[02/24/2024 10:07] brivan
+I would suggest to read about **Yield tokenization**, it will help you alot.
+
+{Reactions}
+🫡 
+
+[02/24/2024 10:14] guy_in0xnito
+The depost function in PT.sol isn't that for depositing principal token ? 
+Quoting from the docs  "If depositing the underlying asset, use PrincipalToken's deposit()."
+ So a person can deposit let's say USDC. As PT. 
+And get its yeild as aUSDC 
+Which is similar to aave ?
+
+
+[02/24/2024 10:15] jean_ch_btc
+Gm everyone! 👋 You can find here a Notion page with a walkthrough of the code. We will also update there the frequently asked questions.
+
+https://perspectivefi.notion.site/Code4Rena-Spectra-Feb-2024-Q-A-48ca96a7f0cc47f98bf01ec157c75379?pvs=4
+
+{Embed}
+https://perspectivefi.notion.site/Code4Rena-Spectra-Feb-2024-Q-A-48ca96a7f0cc47f98bf01ec157c75379?pvs=4
+Code4Rena - Spectra - Feb 2024 Q&A | Notion
+Welcome to the Code4rena Spectra Feb 23, 2024, audit contest FAQ page. On this page, you can find a walkthrough of the code and frequently asked questions about the codebase.
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/https%253A%252F%252Fprod-files-secure.s3.u-11D7E.jpeg
+
+{Reactions}
+❤️ 🫡 🔥 
+
+[02/24/2024 10:16] la_yan
+No, we allow you to split your IBTs in 2 by depositing your ibts in the PT so that it mints you PTs and YTs:) hope that clarifies it
+
+
+[02/24/2024 10:16] sweetjimmy_
+> Before expiry a user needs the same amount of PT and YT to be able to `withdraw()` or `redeem()`. (from [this](https://dev.spectra.finance/guides/tokenising-yield) page)
+
+how can this point be true when users are given different amounts of PTs and YTs on depositing an IBT?
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/spaces2FcXt3S5lwK1ZdxfuW16Uj2Fuploads2FxiX-3B19B.png
+
+
+[02/24/2024 10:16] la_yan
+This is what we call yield tokenization by the way:)
+
+
+[02/24/2024 10:17] la_yan
+PTs and YTs are always minted in equal amounts 😉
+
+
+[02/24/2024 10:18] la_yan
+There’s an awesome codebase walkthrough video in there guys, do not hesitate to watch it🔥
+
+
+[02/24/2024 10:18] sweetjimmy_
+so on depositing 100 aUSDC I'll get 100 PT **AND** 100 YT?
+
+
+[02/24/2024 10:20] la_yan
+Take a look at the deposit function in the PT to get the exact amount you’d get (it actually depends on the ibt rate, the pt rate), but the important thing is that you get the same amount of PTs and of YTs (to answer your previous question)
+
+
+[02/24/2024 10:20] 14si2o_flint
+https://tenor.com/view/happy-early-birthday-now-gimmee-gif-15731324811646516558
+
+{Embed}
+https://tenor.com/view/happy-early-birthday-now-gimmee-gif-15731324811646516558
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/happy-early-birthday-now-9E3A7.png
+
+
+[02/24/2024 10:21] 14si2o_flint
+Where is that video? Can't find it in developer docs
+
+
+[02/24/2024 10:22] 0xsl1
+https://discord.com/channels/810916927919620096/1209905089121357964/1210892668259934239
+
+
+[02/24/2024 10:22] sweetjimmy_
+ohh.. okay that image I sent here got me a little confused. So the amount of PT and YT I'll get will be the same *but* their value in USDC will be different I guess. 100 USDC worth of PT and 3 USDC worth of YT (in case the APR was 3%)
+
+
+[02/24/2024 10:22] 14si2o_flint
+Allright I'm blind af 😂  Thanks!
+
+
+[02/24/2024 10:24] la_yan
+Oh yeah definitely! The PT represent your deposit amount while the YT works as your ticket to get the yield generated by PTs 🙂
+
+
+[02/24/2024 10:25] la_yan
+hahaha no worries it happens to the best of us 😂
+
+{Reactions}
+👍 
+
+[02/24/2024 10:47] 0xauditism
+thanks for making video length adapted to my attention span
+
+{Reactions}
+😂 (6) 
+
+[02/24/2024 11:00] Message Wolf#0225 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Automated findings output for the audit can be found [here](https://github.com/code-423n4/2024-02-spectra/blob/main/bot-report.md).
+
+*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+
+
+[02/24/2024 11:26] guy_in0xnito
+If users come with USDC they go to deposit 
+If they come with aUSDC they go  to depositwithIBT 
+RIGHT ?
+
+{Reactions}
+👍 (2) 
+
+[02/24/2024 11:36] ivanfitro
+how the ptRate and ibtRate are modified?
+
+
+[02/24/2024 11:46] la_yan
+Yes that is correct, assuming of course a « normal » naming/symbolling
+
+
+[02/24/2024 11:48] la_yan
+This is the basis of our protocol, it’s detailed in the docs and videos. Short answer, we infer the ibt rate from the ibt’s previewRedeem function (always on an ibt unit), and the PT rate is strictly decreasing, and decreases if and only if the ibt rate decreased
+
+{Reactions}
+❤️ 👍 
+
+[02/24/2024 12:16] 0xsl1
+In docs, it says that after expiry the token holder could claim the remaining yield of the YT with the reference to `claimYield()`, but in the section of the docs dedicated to `claimYield` it is stated that it can only be called `before` expiry. Am I missing something?
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/image-00008.png
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/image-89422.png
+
+
+[02/24/2024 12:38] la_yan
+Good catch it is a mistake in our docs, I've updated it now so the change should shortly be reflected on the docs
+
+
+[02/24/2024 12:38] 0xsl1
+cool, thanks!
+
+{Reactions}
+🫡 (2) 
+
+[02/24/2024 12:45] 0xsorrynotsorry
+Pinned a message.
+
+{Reactions}
+thankyou 
+
+[02/24/2024 13:03] 14si2o_flint
+@Yanis | Spectra The ptRate, ibtRate & yt are not completely clear to me. 
+
+If Alice deposits 100 aUSDC (yield 5 apr), Spectra splits this into the principal token (worth 100 USDC) and the yield token (worth 5 USDC). But the amount minted of PT and YT is 1 : 1. Correct?
+
+All the prt/ibt calculations revolve around the current price of ptUSDC/aUSDC while the yield (at least in %) is not affected. Correct?  Or is it the total value (105) that is affected?
+
+When the value of ibtRate decreases, ptRate is decreased. 
+When the value of ibtRate increases, ptRate is not changed, but the positive value is calculated as (new - old ) *yt. So with a very volatile IBT, it is reasonable to assume that ptRate can become very small but the yield calculations will also increase greatly. Correct?
+
+
+[02/24/2024 13:30] la_yan
+I believe something which seems unclear on your side is the difference between pt value in our protocol (given by the pt rate), the yield generated by those pts which are attributed to the YT holders AND the market prices at which PTs and YTs are traded (which can be very different). 
+
+What you mention in the second part of your message is correct though 👌🏽 
+
+Hope it helps
+
+{Reactions}
+👍 
+
+[02/24/2024 13:48] sweetjimmy_
+I guess there are two ways to get PT/YT tokens in spectra:
+
+Depositing an IBT/Underlying token and getting **both**
+Using the *Fixed Rates* tool and getting **just** the PT tokens
+Using the *Trade Yield* tool and purchasing **just** the YT tokens
+
+Am I right?
+
+
+[02/24/2024 14:14] la_yan
+That is correct, basically you can either deposit in the protocol or buy the tokens on the market based on your needs / potentiel arbitrage opportunities
+
+{Reactions}
+💯 
+
+[02/24/2024 15:14] sweetjimmy_
+thanks! you're a great help! 👐
+
+{Reactions}
+❤️ 
+
+[02/24/2024 17:09] ivanfitro
+what is the difference between redeem and withdraw?
+
+
+[02/24/2024 17:30] la_yan
+it is the same as in the erc4626 standard: the redeem method lets the user decide precisely how much shares to redeem to receive a certain amount of assets, whereas in the withdraw the user decides how much assets to withdraw redeeming a certain amount of shares. I hope it’s clear
+
+{Reactions}
+👍 
+
+[02/24/2024 17:35] johnsmith1623
+Can you share some vault addresses for https://vision.perspective.fi/
+I tried different vaults, all of them are incompatible.
+
+
+[02/24/2024 17:40] ivanfitro
+how yt will generate yield?
+
+
+[02/24/2024 17:42] ivanfitro
+only if the rates vary?
+
+
+[02/24/2024 17:56] la_yan
+I will not share links here but you should easily find many of them online searching for ERC-4626 Leaderboard 🙂 Here are a couple popular ones on the Ethereum mainnet: 0x83F20F44975D03b1b09e64809B757c47f942BEeA, 0x9D39A5DE30e57443BfF2A8307A4256c8797A3497, 0xA0D3707c569ff8C87FA923d3823eC5D81c98Be78.
+
+That being said it looks like the app is not loading. I've already warned other team members and will get back to you as soon as it will be resolved:) Sorry for the inconvenience!
+
+{Reactions}
+chefskiss 
+
+[02/24/2024 17:59] la_yan
+YT does not "generate yield" per se, 1 YT allows to keep track who should receive the yield generated by 1 PT.  Now to calculate how much yield a user should be entitled to we indeed use rates (keeping track of rate changes). I will let you dig deeper on this looking directly on the code, reading the docs or watching the videos that @Juan | Spectra shared earlier today! Hope it helps 😉
+
+
+[02/24/2024 18:35] sweetjimmy_
+by "redeeming shares" do you mean burning the token that represents shares? or does the user get to keep those tokens representing shares?
+
+
+[02/24/2024 18:38] la_yan
+Yes precisely, sorry for the misleading use of words.
+Before expiry, redeems/withdraws have to burn both tokens. After expiry, only burning PTs matters, while YTs can remain unburnt (does not matter)
+
+{Reactions}
+🫡 
+
+[02/24/2024 18:43] sweetjimmy_
+but in neither of the functions, the asset gets burnt right?
+
+
+[02/24/2024 18:43] sweetjimmy_
+the asset goes back to the user
+
+
+[02/24/2024 18:43] la_yan
+Oh my bad when i mentioned “tokens” i meant PTs and YTs ofc ^^
+
+
+[02/24/2024 18:44] la_yan
+We do not burn assets:)
+
+{Reactions}
+😝 
+
+[02/24/2024 18:45] la_yan
+sorry i feel like maybe i was unclear ill try to rephrase my thoughts a bit better
+
+
+[02/24/2024 18:51] la_yan
+When depositing (let’s say using ibts for simplicity) you transfer the ibts to our contract in exchange for the worth of your deposit in PTs and YTs. Let’s say then some yield gets generated. When withdrawing you specify you want a portion (or all) of the assets amount your shares(PTs and YTs) are worth, burning the equivalent amount of those PTs and YTs of course. When redeeming the user decides the exact amount of shares he owns to be burnt, and doing so the user receives the equivalent assets amount. 
+
+Note that in this example we consider fees to be 0, amounts minted/burnt have been vaguely mentioned (for more precision please look at the code directly), and also by simply depositing and then withdrawing, the user does not really leverages the application that Spectra offers. In other words the user could have simply kept ibts. Hope it s clearer?
+
+{Reactions}
+💯 
+
+[02/24/2024 18:56] sweetjimmy_
+100%! thanks for putting in soo much efforts in helping us understand the protocol! 👐
+
+{Reactions}
+❤️ 
+
+[02/24/2024 19:00] sweetjimmy_
+just to be clear, the user actually leverages the spectra protocol if he does these after getting the PT/YT pair, right?
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/image-BDD39.png
+
+
+[02/24/2024 19:04] la_yan
+Thanks I really appreciate it:) 
+Thank you people for your investigations and interesting questions! 💪🏽
+
+
+[02/24/2024 19:07] la_yan
+Precisely! To be accurate, claiming yield in itself is nothing new since in general it’s contained directly in the IBT, but this yield tokenization design allows for the other applications that you can find in the docs;) trading future yield, fixed rates are good examples of what you can do with Spectra, but much more strategies exist
+
+
+[02/24/2024 19:09] sweetjimmy_
+haha! exactly my thoughts 😅 I'm gradually getting more and more confident about my knowledge of the Spectra protocol
+
+{Reactions}
+🔥 
+
+[02/24/2024 19:09] la_yan
+Great to hear
+
+
+[02/24/2024 19:49] hisoul22
+what are the differences between PrincipalToken.t.sol and PrincipalTokenX.t.sol?
+
+
+[02/24/2024 19:52] hgq2wnl
+I think it is just separating out the tests based on unique setUp() parameters
+
+{Reactions}
+🫡 👍 
+
+[02/24/2024 19:57] hisoul22
+thanks
+
+
+[02/24/2024 21:55] mrudenko
+@Yanis | Spectra hey! Can you please suggest how to read tests and not get crazy? And of course how to understand them?  10+k lines of code...
+
+
+[02/24/2024 23:07] la_yan
+Precisely
+
+{Reactions}
+👍 
+
+[02/24/2024 23:08] la_yan
+Hard to answer honestly. I’ll sleep on it tonight and will try to come up with a good answer.
+
+{Reactions}
+😂 (3) 
+
+[02/24/2024 23:15] hgq2wnl
+which test suite setup parameters (PrincipalTokenX.t.sol or another) would you suggest is the closest to a "complete" or realistic production deployment? E.g. some of them don't set a rewards proxy, some of them give slightly different roles to different addresses, etc.
+
+
+[02/24/2024 23:21] la_yan
+I would personally suggest for the principal token tests to focus on CustomDecimals.t.sol as it is the most recent one. In second, i would say PT3.t.sol. I Hope it will help you guys 🫡
+
+{Reactions}
+thankyou (3) 
+
+[02/25/2024 02:49] p2m8
+I am not sure I understnd the difference between the withdraw and redeem mechanism..
+
+
+[02/25/2024 02:50] p2m8
+right I think it's just that one takes shares and the other assets as parameters
+
+
+[02/25/2024 05:36] sweetjimmy_
+yeah that's pretty much it. Read the 4626 standard to understand the difference butter
+
+{Reactions}
+🫡 
+
+[02/25/2024 08:02] sweetjimmy_
+how are prices of assets/tokens coming into the contracts? Just by using the `RateOracle`? Or do the contracts at some point interact with https://vision.perspective.fi/ too for the prices?
+
+
+[02/25/2024 08:17] novamanbg
+Any help on where to create RPC URL for the Goerli network?
+
+
+[02/25/2024 08:22] 0xsl1
+https://www.alchemy.com/
+
+{Embed}
+https://www.alchemy.com/
+Alchemy - the web3 development platform
+Whether you're a beginner developer, startup, web3 market leader, or a large enterprise, Alchemy makes multichain web3 development easy.
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/1705957019-home-page-og-image_sm-A0025.png
+
+
+[02/25/2024 08:23] novamanbg
+Hmm, it does only allows me to create mainnet or sepolia
+
+
+[02/25/2024 08:25] 0xsl1
+I have few old Goerli rpcs, can share with you in DM if you'd like
+
+
+[02/25/2024 08:25] 0xsl1
+oh it seems it's no longer supported by alchemy
+
+
+[02/25/2024 08:25] 0xsl1
+nvm then
+
+
+[02/25/2024 08:26] 0xsl1
+try infura maybe
+
+{Reactions}
+✅ (3) 
+
+[02/25/2024 08:26] novamanbg
+ty
+
+
+[02/25/2024 09:46] la_yan
+Basically yes, and the return values are different as well:)
+
+
+[02/25/2024 09:52] la_yan
+The only relevant "price" for us is the IBT price in underlying (that we call ibtRate), which we basically get by calling the previewRedeem of the 4626 IBT on an IBT_UNIT at any user interaction with our protocol. In the PT, we do not care about other external prices. Moreover, the rateOracle contract is not in the scope of this audit and should be useful for other of our products in the future, or might not even ever be relevant to us.
+Hope it answers your doubts
+
+
+[02/25/2024 09:54] la_yan
+yeah Infura since Alchemy seems to have gone exclusively for Sepolia now. Worst case, remove the tests where you need the RPC_URL and focus on the other ones.
+
+
+[02/25/2024 10:33] yotov721
+https://chainlist.org/chain/5  A couple of goerli RPC URLs. The 1st one worked for me
+
+{Embed}
+https://chainlist.org/chain/5
+Goerli RPC and Chain settings | ChainList
+Find the best Goerli RPC to connect to your wallets and Web3 middleware providers.
+
+{Reactions}
+👍 (3) 
+
+[02/25/2024 10:50] desaperh
+Same for me
+
+
+[02/25/2024 11:30] 0xabhay.
+@Yanis | Spectra  in PrincipalToken only IBT token are allowed ?
+
+
+[02/25/2024 11:46] la_yan
+Our protocol comes on top of IBTs yes. We consider them to be strictly following erc4626, and having decimals between 6 and 18.
+
+{Reactions}
+👍 
+
+[02/25/2024 11:51] 0xsl1
+Is there a list of protocols/vaults spectra is expected to interact with or is it just all ERC4626 compliant vaults?
+
+
+[02/25/2024 11:55] radev_40364
+Where does rewardsProxy address comes from? Which contract functions does IRewardsProxy provide?
+
+
+[02/25/2024 12:11] blutorque
+specificly mentioned here,
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/Screenshot_2024-02-25_174036-0EDA0.png
+
+{Reactions}
+🫡 
+
+[02/25/2024 12:12] 0xsl1
+yes, I know, was just wondering if team has some protocols in mind, that they will deploy PT's for
+
+{Reactions}
+👍 
+
+[02/25/2024 12:17] blutorque
+apwine migrated to spectra, this may help to get an idea at least https://app.apwine.fi/futures?chainId=1
+
+{Reactions}
+🫡 
+
+[02/25/2024 12:17] 0xsl1
+ty, will check out
+
+{Reactions}
+🙏 
+
+[02/25/2024 15:26] hgq2wnl
+hi, may i confirm if the "non malicious IBT" known issue item also means that issues that (partially) rely on a faulty/vulnerable IBT implementation are out of scope? E.g should we assume that the IBT is properly protected against inflation attacks and the like. Since the IBTs themselves are mocks and thus OOS for this competition.
+
+
+[02/25/2024 15:34] sweetjimmy_
+yeah. it totally does. Thanks for your answer!
+
+{Reactions}
+🫡 
+
+[02/25/2024 15:43] la_yan
+Spectra is permissionless in terms of ERC4626 integration. That being said, we realize it opens doors to malicious IBTs being integrated (or even non malicious but non strictly 4626). However, you should consider this to be out of scope since it will be up to users to check where they put their funds and make sure that the IBTs are safe. We of course plan on monitoring integrated vaults but we will be very upfront about that;)
+
+{Reactions}
+thankyou (2) 
+
+[02/25/2024 15:44] la_yan
+Correct, this it out of scope:)
+
+{Reactions}
+thankyou 
+
+[02/25/2024 15:46] la_yan
+As you can see this will be set by an address or multisig owned by us for vaults that might have various ways to reward users other than just the ibt rate. For instance, we’d like to integrate vaults from protocols such as Morpho:) hope it’s clarifying that aspect
+
+{Reactions}
+thankyou 
+
+[02/25/2024 17:32] mrudenko
+How to create PT?
+
+
+[02/25/2024 19:36] brivan
+You deposit underlying or the ibt, and the protocol will mint PT and YT, this is called *Yield Tokenization*
+
+{Reactions}
+🫡 
+
+[02/25/2024 19:44] mrudenko
+sorry, I mean Private thread?
+
+{Reactions}
+😂 (5) 
+
+[02/25/2024 19:50] brivan
+On the top navbar click on the most left icon
+
+Create your thread and **make sure to check the checkbox *"only people you invite can see"***
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/image-22C43.png
+
+{Reactions}
+👍 (3) 
+
+[02/26/2024 04:56] pkqs90
+Hey guys, is there is a doc of some sort to explain the rate calculation formulas in details
+
+
+[02/26/2024 04:59] pkqs90
+A question i have reading the yield computation is for the only postive yield is - why is the yield calculated like `newYieldInIBTRay = ibtOfPTInRay.mulDiv(_ibtRate - _oldIBTRate, _ibtRate);`, dividing the new _ibtRate instead of the old one
+
+
+[02/26/2024 05:21] pkqs90
+oh wait, just figured this out. anyways, still wondering if there is a doc for the mathematic formulas
+
+
+[02/26/2024 08:52] sweetjimmy_
+is it just me or does anyone else also think that EIP-5095 is awfully similar to EIP-4626?
+
+
+[02/26/2024 09:15] jean_ch_btc
+The protocol requires the `ibtRate` to have a baseline reference for comparing the price per share and accounting for the yield. It was decided to use the `previewRedeem` of one IBT unit. The protocol accepts IBT deposits and holds IBTs. Then, by considering the yield from different users and their shares, the protocol assumes linearity to convert underlying amounts (within the protocol) to IBT amounts.
+
+- Thus, dividing an underlying amount by the `ibtRate` is an internal conversion from the underlying to IBTs. Multiplying an IBT amount by the `ibtRate`, conversely, converts IBT to underlying.
+- The ptRate allows conversion between PT shares and underlying.
+
+Thus for this specific computation, the `ibtRate` indicates the amount of underlying redeemable when burning one share of IBT. Therefore, the `ibtRate` unit is in the underlying. When the amount is subtracted between the old and new rate, we obtain the underlying difference. Dividing this underlying amount by the new `ibtRate` is a conversion from underlying to IBT, as the yield is stored in IBT (`newYieldInIBTRate`).
+
+{Reactions}
+👍 (3) 
+
+[02/26/2024 09:16] jean_ch_btc
+We have a few details but more is planned to be added!
+
+
+[02/26/2024 09:18] brivan
+++
+If there were a white paper or a sort of reference for those math calculations on yield computation that would be awesome and save a lot of time trying to figure out why certain formula is applied in certain situation
+
+
+[02/26/2024 09:20] sweetjimmy_
+from the readme.md 👇
+
+"*Holding the YT allows the user to claim the corresponding amount of yield generated by the IBTs deposited in the associated PT contract.*"
+
+So, if a user has deposited ONLY the underlying token (like USDC) that doesn't generate any yield like an IBT (like aUSDC) then that user would not be able to get any yield by calling the `claimYield` function?
+
+@Juan | Spectra
+
+
+[02/26/2024 09:22] jean_ch_btc
+When a user decide to deposit in underlying the protocol will deposit these underlyings (e.g. USDC) in the IBT for him as a first step (to get aUSDC and deposit those in the PT). These are more for conveniance if you already have IBTs (aUSDC) the protocol don't expect the user to withdraw to redeposit and for the underlying one, you can do both in the same transaction.
+
+{Reactions}
+💡 
+
+[02/26/2024 09:26] jean_ch_btc
+There are some details here https://dev.spectra.finance/technical-reference/yield-calculations
+
+If anything is unclear, we will take your valuable feedback and update the documentation 🙏
+
+{Embed}
+https://dev.spectra.finance/technical-reference/yield-calculations
+Yield Calculations
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/ukc6xl1tF73viQdIuOaw-98598.png
+
+{Reactions}
+🫡 (3) 
+
+[02/26/2024 09:27] sweetjimmy_
+"*the protocol will deposit these underlyings (e.g. USDC) **in the IBT** for him* "
+
+what do you mean by *in the IBT*? If you wanna get an IBT then I guess you'll be depositing those underlyings in another defi protocol right?
+
+
+[02/26/2024 09:27] 0xsl1
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L183
+
+{Reactions}
+🫡 
+
+[02/26/2024 09:31] sweetjimmy_
+thanks! makes sense
+
+{Reactions}
+🫡 
+
+[02/26/2024 09:53] la_yan
+The other DeFi protocol has an IBT 4626 representing an investment strategy, which anyone can interact with directly, for instance by depositing assets to mint IBTs. 
+So of course you can always pass by the other protocol's UI to obtain your IBTs and then come on our platform and deposit your IBTs, but we propose alternatively to directly pass through us to "zap" those 2 interactions in 1 to simplify things for users. Does that make sense?
+
+
+[02/26/2024 10:01] sweetjimmy_
+yeah! absolutely! looking at the code just made everything clear
+
+{Reactions}
+💪🏽 
+
+[02/26/2024 10:38] 0xleveler
+The PT contract is initialized with an ibt address, can a user deposit a different ibt into that same PT contract ?
+
+
+[02/26/2024 10:42] la_yan
+nope:)
+
+
+[02/26/2024 10:53] guy_in0xnito
+Has anyone made any diagram or code flow would love to see some apart from mine ( messy one)
+
+
+[02/26/2024 11:07] la_yan
+If you havent, you could try using pluggins, for instance if you're using vs-code I know consensys has one that might be interesting. I am also currently discussing with the team to see if we can share our diagrams with you people (nothing sure yet though) 🙂 In the mean time please feel free to share yours among yourselves ofc!
+
+
+[02/26/2024 11:33] mrudenko
+@Yanis | Spectra do you support fee-on-transfer IBT tokens?
+
+
+[02/26/2024 11:39] la_yan
+Yes we would like to be but please consider taking a look at: https://discord.com/channels/810916927919620096/1209905089121357964/1210904061398745099 😉
+
+{Reactions}
+👍 🥲 
+
+[02/26/2024 11:45] guy_in0xnito
+I actually have done that 
+But since due to lot of function calls had to male my own 
+So thought if someone else have done something freshly would love to see
+
+{Reactions}
+🔥 
+
+[02/26/2024 15:04] radev_40364
+Why there is going to be multiple asset tokens and the PT contract expect to have only a single asset information stored init, are there going to be multiple PT deployed too?
+
+
+[02/26/2024 15:14] la_yan
+Every PT will have a single corresponding IBT which in turns has a single corresponding Asset. 
+The amount of PT deployed will depend on the community/partners etc. since the deployment of PT is permissionless:)
+
+{Reactions}
+10_10 
+
+[02/26/2024 15:54] la_yan
+Hello again there, Vision app should now be up again  🙂 Sorry for the inconvenience
+
+{Reactions}
+thankyou 
+
+[02/26/2024 16:13] sp1cymeatball
+Any examples of vaults where ibtRate can decrease?
+
+
+[02/26/2024 18:08] la_yan
+You have lists of IBTs online (e.g. ERC4626 Leaderboards) and cross checking addresses on Vision should allow you to find some:) But indeed it is not super common on popular platforms / vaults.
+
+{Reactions}
+thankyou 
+
+[02/27/2024 05:34] guy_in0xnito
+So when a user enters with IBT , what do you  expect the assetdecimals variable will it be 0?
+
+
+[02/27/2024 06:57] 0xauditism
+why do you think it will be 0 ? 
+https://github.com/code-423n4/2024-02-spectra/blob/25603ac27c3488423a0739b66e784c01a3db7d75/src/tokens/PrincipalToken.sol#L142
+
+```solidity
+  _assetDecimals = PrincipalTokenUtil._tryGetTokenDecimals(_asset);
+```
+
+{Embed}
+https://github.com/code-423n4/2024-02-spectra/blob/25603ac27c3488423a0739b66e784c01a3db7d75/src/tokens/PrincipalToken.sol
+2024-02-spectra/src/tokens/PrincipalToken.sol at 25603ac27c3488423a...
+Contribute to code-423n4/2024-02-spectra development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/1cf2bc9e-e83b-4f7f-a816-2260a9a4b2fa-0E61C
+
+{Reactions}
+🫡 
+
+[02/27/2024 10:39] la_yan
+Could you please reformulate the question? Not sure to understand what you're asking
+
+
+[02/27/2024 11:28] merulz
+May anyone provide me a Goerli RPC plz xD ?
+
+
+[02/27/2024 11:36] blckhv
+GOERLI_RPC_URL=https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa445616
+
+{Reactions}
+🫡 
+
+[02/27/2024 11:40] merulz
+gracias !
+
+
+[02/27/2024 12:10] sweetjimmy_
+Guys, I have a kind of stupid question...
+
+I am not getting this operation, `_shares.mulDiv(_rate, _ibtUnit, _rounding)` 
+
+I know that mulDiv(x,y,z)  will return x*y/z. But where does the `_shares` amount fit into this formula?
+
+
+[02/27/2024 12:13] yotov721
+The function is overloaded `_shares` is the 1st parameter in `Math.mulDiv(uint256 x, uint256 y, uint256 denominator, Rounding rounding)`
+
+{Reactions}
+🎉 🫡 
+
+[02/27/2024 12:14] slavcheww
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/image-C3026.png
+
+{Reactions}
+💕 🫡 
+
+[02/27/2024 12:16] sweetjimmy_
+aha! didn't notice the overloading of mulDiv. thank you frens!
+
+
+[02/27/2024 12:42] guy_in0xnito
+Here the rounding is actually bool 
+It checks if round up or down !
+
+
+[02/27/2024 12:55] la_yan
+Thank you all for helping each other out we really appreciate it ❤️  It is pretty hard to keep up the rythm answering all of you guys' very interesting questions/remarks, so thank you for the help and for being so patient 🫡
+
+{Reactions}
+💜 (2) 
+
+[02/27/2024 13:36] guy_in0xnito
+Hey i actually had one question while intitialization of "ibtrate" how does 'toRay' function come 
+Since it has been passed one argument but it expects 2? 
+ In line 152of PT.sol
+
+
+[02/27/2024 13:39] strausses
+the `PrincipalToken.sol` will be used with proxy, right? Such that `initialize` will be called using delegatecall
+
+
+[02/27/2024 13:39] 0xsl1
+same answer as here 
+ https://discord.com/channels/810916927919620096/1209905089121357964/1212009598815436857
+
+{Reactions}
+🫡 
+
+[02/27/2024 13:53] guy_in0xnito
+Ya kind of thought that 
+Since something similar written in the codebase but had to check it 
+thanks
+
+{Reactions}
+👌🏽 
+
+[02/27/2024 13:54] sp1cymeatball
+Goerli still working? 🤔
+
+
+[02/27/2024 14:55] guy_in0xnito
+Ehy does during burning owners share it means PT after expiry?
+
+
+[02/27/2024 14:55] guy_in0xnito
+And in same line it says PT/YT before expiry?
+
+
+[02/27/2024 15:48] la_yan
+Yes, we use beacon proxies for the PT and YT
+
+
+[02/27/2024 15:49] la_yan
+Could you please rephrase your question please?
+
+
+[02/27/2024 15:52] la_yan
+Before expiry you need to burn both your PTs/YTs to get back your investment whereas after expiry YTs become useless so we do not bother burning them anymore. Reminder that YTs are used as "tickets" that track who should receive the yield generated by the PT during the defined period.
+
+
+[02/27/2024 16:35] guy_in0xnito
+Ya so in redeem and withdraw function
+There is said about burning the shares 
+But i think in redeem says PT after expiry  but in same line it alao says PT /YT before expiry
+
+And for withdraw function it says PT/YT Before expiry
+
+
+[02/27/2024 17:41] la_yan
+Both functions (withdraw and redeem) burn PT/YT before expiry and only PT after expiry
+
+
+[02/27/2024 19:32] yotov721
+YT becomes 0 after expiry automatically due to the logic in `YT.balanceOf()` . That is the reason it is not burned after expiery, correct ?
+
+
+[02/27/2024 19:36] 0xsl1
+YT represent some future yield for an X period of time, after that time X there is no more yield, so it becomes worthless
+
+{Reactions}
+✅ (2) 
+
+[02/27/2024 20:20] novamanbg
+I am confused, when does a user claim more yield, when ibtrate goes up or down or in both cases?
+
+{Reactions}
+🆙 (2) 
+
+[02/27/2024 20:33] brivan
+After expiry the yield will always be zero, not because the use of `YT.balanceOf()`(you can see on `_computeYield` they are using `actualBalanceOf` instead of `balanceOf`) but because the `ptRate` and `ibtRate` never changes after expiry in which `_computeYield` will always return the current user yield which will always be zero when user claims his yield after expiry: https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/libraries/PrincipalTokenUtil.sol#L64-L66
+
+{Embed}
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/libraries/PrincipalTokenUtil.sol
+2024-02-spectra/src/libraries/PrincipalTokenUtil.sol at 383202d0b84...
+Contribute to code-423n4/2024-02-spectra development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/1cf2bc9e-e83b-4f7f-a816-2260a9a4b2fa-0E61C
+
+{Reactions}
+❤️ (2) 
+
+[02/27/2024 20:43] brivan
+`ibtRate` goes up or down depending on the market. They call `previewRedeem` on the ERC4626 vault to know how much does one unit of ibt worth in terms of underlying asset: https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L902C17-L902C31
+So the ERC4626 vault acts here like an oracle.
+And depending on the update of `ibtRate` the `ptRate` changes: if `ibtRate` goes up, the `ptRate` stays the same. If the `ibtRate` goes down, the `ptRate` goes down (`ptRate` never increases)
+
+{Embed}
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol
+2024-02-spectra/src/tokens/PrincipalToken.sol at 383202d0b84985122f...
+Contribute to code-423n4/2024-02-spectra development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/1cf2bc9e-e83b-4f7f-a816-2260a9a4b2fa-0E61C
+
+{Reactions}
+❤️ 
+
+[02/27/2024 20:45] 0xsl1
+it’s explained quite good here
+
+https://discord.com/channels/810916927919620096/1209905089121357964/1211605101085724793
+in the section “if ibt is volatile”
+
+{Reactions}
+💯 (2) 🥹 
+
+[02/27/2024 20:53] novamanbg
+thanks it now makes sense!
+
+{Reactions}
+🫡 
+
+[02/27/2024 23:10] guy_in0xnito
+PT. After / before both times 
+I think i am kinda getting confused
+
+
+[02/27/2024 23:40] la_yan
+Woaw many thanks to all of you, it really is amazing to see that much collaboration 🫡  
+Most of you seem to have understood Spectra extremely well!
+Grateful to have you all helping us at trying to achieve better security 🔥
+
+{Reactions}
+code4rena (3) 
+
+[02/27/2024 23:47] la_yan
+In the PT contract there is only one important deadline which we refer to as expiry or maturity. The contract's function differ based on if they are called before or after that timestamp. The reason for the existence of that deadline intuitively (simplifying there) is that when investing you kind of plan on investing a certain period of time, during which your investment is lock to generate yield (until you decide to stop, in which case no yield is generated anymore). Also, try thinking about future yield trading, would it make sense to have a market for extremely big period of times? The longest the period of yield you are trading, the harder it is to make bets on the real return the investment strategy is going to make. Now what about trading an infinite future yield? It does not really make sense both for the yield traders and the PT holder.
+I hope this clarifies things for you!
+
+
+[02/28/2024 04:06] parthmandale
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L176
+
+Q1. Here in the deposit function can anyone tell where this check condition is applied?
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/Screenshot_from_2024-02-28_09-34-24-89EA8.png
+
+
+[02/28/2024 04:07] parthmandale
+or it gets directly checked as no one without the enough balance of asset will be able to call
+
+
+[02/28/2024 04:07] arthur1130_16768
+where can I find "RewardsProxy" contract source code? Is it another proxy like "AMTransparentUpgradeableProxy.sol"?
+I ask this question because it is crucial to PT security
+
+
+[02/28/2024 05:11] parthmandale
+Q2. What if  what if somones oldIBTRateUser is 0, maybe because of  deposits for the first time or rates decreased to 0. Then how that return updatedUserYieldInIBT is going to get updated for them? will it be then 0?
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L363
+
+
+[02/28/2024 05:16] sweetjimmy_
+yes that's the case. the tx will revert if pt.sol doesn't have enough allowance to transfer assets from the user
+
+{Reactions}
+✅ 
+
+[02/28/2024 05:25] parthmandale
+yeah understandable
+
+
+[02/28/2024 05:25] parthmandale
+?
+
+
+[02/28/2024 05:29] 0xsl1
+what exactly is not clear?
+
+
+[02/28/2024 05:38] blutorque
+I think it happens when updateYield is called 2nd time for the user, considering the rates(_ibtRate) also changed for IBT vault.
+
+
+[02/28/2024 05:52] parthmandale
+Yeah I understood that, but what for 1st timer?
+
+
+[02/28/2024 05:52] parthmandale
+Edited the Q, now you might understand
+
+
+[02/28/2024 05:57] evokid
+there is no _computeYield when ibtRateOfUser is 0 that's intentional unless you have specific case in your scenario.
+
+{Reactions}
+✅ (3) 
+
+[02/28/2024 05:59] 0xsl1
+still don’t really get it, when old user rate is 0, _computeYield is not called and it’s pretty evident from the code
+
+{Reactions}
+✅ (2) 
+
+[02/28/2024 06:00] arthur1130_16768
+where can I find "RewardsProxy" contract source code? Is it another proxy like "AMTransparentUpgradeableProxy.sol"?
+I ask this question because it is crucial to PT security @Yanis | Spectra
+
+
+[02/28/2024 06:01] blutorque
+for the first time, its just sync user rates with current rates, So, no yield, which makes sense.
+
+{Reactions}
+👍🏻 (4) 
+
+[02/28/2024 10:14] jean_ch_btc
+Hey  👋 There is no specific implementation for the rewards proxy contract. It is acknowledged that such a `delegatecall` is highly sensitive and can override storage in the PT contract instance. What I can give are general specifications that this rewards proxy will follow. The proxy contract will be stateless, with the `claimRewards` function operating independently, not interacting with the principal token's functions or state. The proxy contract will not transfer any IBT token owned by the PT. The `claimRewards` function will claim rewards from the reward program and send them to a rewardCollector, which then redirects these rewards to the Spectra governance rewards system. Each rewards proxy contract will be deployed and verified by the DAO for complying with these specifications.
+
+{Reactions}
+🫡 
+
+[02/28/2024 10:58] rickardlarsson6
+Does it use a side-chain?
+
+
+[02/28/2024 14:13] 0xleveler
+are Assets/IBTs sent to the PT contract before initialization, if so how ?
+
+
+[02/28/2024 14:34] la_yan
+none should be otherwise the user sending them would just loose funds ^^
+
+
+[02/28/2024 15:36] la_yan
+Not sure to get your question sir 🫡
+
+
+[02/28/2024 15:47] novamanbg
+_computeYield suggests that there is a case in which ptRate goes down but ibtRate goes up or stays the same. How is this possible?
+
+
+[02/28/2024 15:51] 0xauditism
+the ibt rate can go up again but the pt cannot
+
+{Reactions}
+✅ (2) 
+
+[02/28/2024 16:30] la_yan
+if the IBT rate goes down and user interact with us then the ptRate decrease. However, the ptRate will indeed never increase again by design. Not sure what else to tell you about that
+
+{Reactions}
+🫡 
+
+[02/28/2024 18:09] johnsmith1623
+It seems, Pt contract is initialized on deployment by factory in the same transaction, so the contract is always initialized.
+
+{Reactions}
+🫡 
+
+[02/28/2024 21:26] brivan
+You guys found anything ??👀 Whenever an attack vector comes to my mind, I find the codebase already covered that... this one got me tired.
+
+{Reactions}
+❤️ (2) 😭 (3) 🙄 
+
+[02/28/2024 21:40] maxwell4426
+Am glad someone asked this. Am in the same boat and have spent quite a lot of time at this. Gotta give it to the devs. Well written code
+
+{Reactions}
+❤️ (2) 🥲 (2) 
+
+[02/28/2024 22:14] johnsmith1623
+And did you see their tests? they are massive! Like they did not want us to find anything.
+
+{Reactions}
+❤️ (2) 😭 😆 
+
+[02/28/2024 22:24] la_yan
+Thanks a lot for the feedback guys, once again we are extremely grateful for that 🫡 
+Sorry for making you work hard… there is still ~2 days to find issues though ⏱️ and we will keep trying to answer your questions as fast as possible! 
+
+Keep up the great work and collaboration 🙏🏽🔥
+
+
+[02/29/2024 02:55] 0xabhay.
+done with this thank you  @Yanis | Spectra  for answering all of my questions. good luck everyone
+
+{Reactions}
+🫡 
+
+[02/29/2024 03:29] josh4324
+@Yanis | Spectra One of the invariants says PT rate should not increase and another one says Accounted IBT rate cannot decrease without impacting PT rate, my question is that when the PT rate decrease due to Accounted IBT rate, can it increase back to the original PT rate.
+
+
+[02/29/2024 06:37] 0xauditism
+https://discord.com/channels/810916927919620096/1209905089121357964/1212436734898343986
+
+{Reactions}
+✅ 
+
+[02/29/2024 06:38] 0xauditism
+take a look at this
+https://discord.com/channels/810916927919620096/1209905089121357964/1211605101085724793
+
+{Reactions}
+✅ 
+
+[02/29/2024 07:04] 0xdemonnn
+Have some questions on private thread, please check @Yanis | Spectra
+
+{Reactions}
+🫡 
+
+[02/29/2024 08:30] 14si2o_flint
+Yup, bloody rock solid. First time ever I see test code 10x actual code base. May the best QA report win 😂
+
+{Reactions}
+😂 (13) 🫡 (2) 
+
+[02/29/2024 10:04] la_yan
+Your observation is correct 😉 That is our design for being permissionless and tolerating IBTs with volatile rate, with negative rate
+
+
+[02/29/2024 10:04] la_yan
+On it now:)
+
+{Reactions}
+👍 
+
+[02/29/2024 10:31] radev_40364
+Am I the only one who meet setUp failed at any PrincipalToken.t, due to expected event not emitted?
+
+
+[02/29/2024 10:32] 0xsl1
+remove expectEmit, that should work
+
+{Reactions}
+❤️ (2) 
+
+[02/29/2024 10:36] radev_40364
+I would love if it was that simple
+
+
+[02/29/2024 10:40] radev_40364
+Wait is it fork tests only?
+
+
+[02/29/2024 10:53] la_yan
+We have many non-fork tests 🙂
+
+
+[02/29/2024 10:56] la_yan
+This is unexpected, I will investigate further and get back to you 🫡  In the meanwhile you can indeed remove the expectEmit cheatcode and see if that helps you running tests
+
+{Reactions}
+thankyou 
+
+[02/29/2024 11:06] la_yan
+All good people, the issue has been resolved by @radin100 🫡  We are indeed using a Goerli fork for some tests and not Sepolia (our old betas were on Goerli). That being said we realize that Goerli is now deprecated, and we have already started the switch on our side.
+
+{Reactions}
+🫡 
+
+[02/29/2024 19:21] 7a4raf
+When should `PrincipleToken::updateYield` be called?
+
+
+[02/29/2024 19:53] la_yan
+It can be called whenever, but should be called before any YT transfer
+
+{Reactions}
+❤️ 
+
+[03/01/2024 08:51] parthmandale
+Is anyone here still fighting back?
+
+
+[03/01/2024 08:56] 0xauditism
+still goin
+
+{Reactions}
+🔥 (4) 🫡 (2) 
+
+[03/01/2024 08:58] parthmandale
+haha same, but now from point of learning!
+
+{Reactions}
+🫡 
+
+[03/01/2024 09:32] 14si2o_flint
+It ain't over till the fat lady sings  👊
+
+{Reactions}
+🤨 (2) 😂 (2) 
+
+[03/01/2024 10:07] maxwell4426
+I guess QA will do at this point 😃
+
+{Reactions}
+🫡 
+
+[03/01/2024 10:20] la_yan
+Good luck auditors! 🔥 
+8h+ left to find vulnerabilities 🫡
+
+
+[03/01/2024 10:31] strausses
+In the PrincipalToken.t.sol is contract MockERC20 and contract MockIBT are the same token?
+
+
+[03/01/2024 10:32] 0xsl1
+MockERC20 is the underlying asset deposited to the vault which is MockIBT
+
+{Reactions}
+thankyou 🫡 
+
+[03/01/2024 10:41] iam0x996
+Hello 
+Can you take a look at my private thread, please?
+
+{Reactions}
+😂 👀 
+
+[03/01/2024 11:10] 14si2o_flint
+Can you please check the last question in the private thread?
+
+{Reactions}
+👀 
+
+[03/01/2024 11:26] iam0x996
+Me too 😂 🫡
+
+
+[03/01/2024 11:27] brivan
+That's it. I'm done with this contest, ended up submitting QA report only.
+The one who finds a HM will share a large percentage of the prize pool.
+Thanks for this contest and high fives to the sponsors for answering all our questions.
+
+{Reactions}
+🫡 
+
+[03/01/2024 11:33] iam0x996
+The contest is not over yet, don't give up so early! Believe in yourself and continue with the audit. :hi5:
+
+{Reactions}
+🔥 (2) 
+
+[03/01/2024 11:36] 0xabhay.
+How many submissions do you guys think this contest will have?
+
+{Reactions}
+❓ 
+
+[03/01/2024 11:37] sp1cymeatball
+600-1000
+
+{Reactions}
+👍 (3) 
+
+[03/01/2024 11:37] 0xabhay.
+no wayyyy
+
+{Reactions}
+4739_Skeletor (2) 
+
+[03/01/2024 11:37] 0xsl1
+quite reasonable number
+
+{Reactions}
+👌🏽 
+
+[03/01/2024 11:38] la_yan
+not the same no 🙂  The first is a mock of Asset, and the other a mock IBT 🙂
+
+
+[03/01/2024 11:38] 0xabhay.
+what if there is no H/M?
+
+{Reactions}
+❓ (2) 
+
+[03/01/2024 11:38] la_yan
+On it, sorry guys parallelizing this and work here 😦 but will focus on your questions very shortly
+
+{Reactions}
+🫡 
+
+[03/01/2024 11:38] la_yan
+on it asap as well
+
+
+[03/01/2024 11:39] la_yan
+lmao, same
+
+
+[03/01/2024 11:39] 0xsl1
+pot will be split between QA reports
+
+{Reactions}
+👍 
+
+[03/01/2024 11:39] la_yan
+Thanks for the hard work sir 🫡  Best of luck for the future
+
+
+[03/01/2024 11:40] la_yan
+Yeah guys keep it up if time allows 🫡  vulnerabilities can be found up until the last second haha
+
+{Reactions}
+😉 (2) 
+
+[03/01/2024 12:05] la_yan
+If I didn't miss anyone you should've all been answered to by now
+
+{Reactions}
+✅ 
+
+[03/01/2024 12:24] oxtenma
+well written codebase 🫡  @Yanis | Spectra
+
+{Reactions}
+🫡 (7) 
+
+[03/01/2024 12:32] la_yan
+Thanks, really appreciate it 🫡
+we did our best 🙂
+
+{Reactions}
+🫡 (2) 
+
+[03/01/2024 18:35] thisvishalsingh
+hey can someone confirm that which oracle does the protocol uses?
+
+
+[03/01/2024 18:36] thisvishalsingh
+@Yanis | Spectra please
+
+
+[03/01/2024 18:39] la_yan
+We use IBT’s previewRedeem method on IBT unit to get IBT rates at time t, but we don’t use any oracle per se
+
+
+[03/01/2024 18:45] thisvishalsingh
+oh, great ty!
+
+
+[03/01/2024 18:54] thisvishalsingh
+Hey are you considering centralization risks? @Yanis | Spectra
+
+
+[03/01/2024 18:55] la_yan
+Depending on the risk:) if you have anything in mind I’d suggest to report it and it will definitely get discussed
+
+
+[03/01/2024 18:56] thisvishalsingh
+great ty!
+
+
+[03/01/2024 19:40] thisvishalsingh
+I managed to submit 5 H/M in last 3 hours, ty for the quick response @Yanis | Spectra .
+Good luck to all.
+
+{Reactions}
+🫡 
+
+[03/01/2024 19:42] thisvishalsingh
+Still I have lows to submit.
+
+{Reactions}
+🫡 
+
+[03/01/2024 19:48] la_yan
+looking forward to see what you’ve got 😉
+
+{Reactions}
+🫡 
+
+[03/01/2024 20:01] 0xsl1
+It was an interesting codebase, thanks to the team for the opportunity to learn something new. Kudos for the communication and well-written code:chefskiss:
+
+{Reactions}
+🫡 (2) 
+
+[03/01/2024 20:01] 0xsl1
+gl everyone
+
+
+[03/01/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺wardens The **Spectra** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the audit is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a Contest-Admin if you have questions along the way!
+
+
+[03/01/2024 20:02] yotov721
+Can someone with backstage say how many submisions there are ? 🙂
+
+{Reactions}
+💯 (3) 
+
+[03/01/2024 20:05] parthmandale
++1
+
+{Reactions}
+🫡 
+
+[03/01/2024 20:08] dimulski
++2
+
+{Reactions}
+➕ 🫡 
+
+[03/01/2024 20:10] parthmandale
+you have backstage, so can you tell how many H/M were submitted?
+
+
+[03/01/2024 20:10] 0xsl1
+its not instant
+
+{Reactions}
+🫡 
+
+[03/01/2024 20:10] dimulski
+😄 , will do once they are out, but with the new ai helper it takes a bit more time
+
+{Reactions}
+👍🏻 (2) 
+
+[03/01/2024 20:11] parthmandale
+Ohh I see
+
+{Reactions}
+🫡 
+
+[03/01/2024 20:18] lsaudit
+new ai helper? What's that?
+
+{Reactions}
+🫡 
+
+[03/01/2024 20:19] dimulski
+ai algorithm(or whatever it is called) that helps with pre sorting
+
+{Reactions}
+🫡 
+
+[03/01/2024 20:20] lsaudit
+is there any documentation on how it works? By pre-sorting you mean classifing similar issues into one group, or just removing what-ai-thinks-is-incorrect?
+
+{Reactions}
+🫡 
+
+[03/01/2024 20:21] jvorex
+the former yes
+
+{Reactions}
+👆 
+
+[03/01/2024 20:21] lsaudit
+thx!
+
+
+[03/01/2024 21:06] dimulski
+298
+
+
+[03/01/2024 21:13] 0xsl1
+i was not expecting that low
+
+{Reactions}
+🫡 
+
+[03/01/2024 21:13] 14si2o_flint
+200+ QA reports? 😄
+
+{Reactions}
+😂 (5) 🫡 (4) 
+
+[03/01/2024 21:13] 0xdemonnn
+yeahh, me too 🤔
+
+{Reactions}
+🫡 
+
+[03/01/2024 21:14] 14si2o_flint
+Well there are 20+ contests atm & the test suite scared a lot of people I think
+
+{Reactions}
+🫡 
+
+[03/01/2024 21:17] dimulski
+who even looks at the test suite 😄
+
+
+[03/01/2024 21:17] 14si2o_flint
+Honestly I didn't hahaha, only found out after 3 days
+
+{Reactions}
+😂 (4) 
+
+[03/01/2024 21:18] 0xdemonnn
+agree, but this is surprising. considering the number of submissions in past curves contests 😅
+
+
+[03/01/2024 21:19] 0xsl1
+the codebase difficulty is different to compare it with curves i guess
+
+
+[03/01/2024 21:20] 14si2o_flint
+All the better for us then. In comparison, my submissions for aiArena will get me a McDonalds happy meal with the 6456456 duplicates 😭
+
+{Reactions}
+🤣 (4) 
+
+[03/01/2024 21:20] sp1cymeatball
+Big brain codebase 😆
+
+{Reactions}
+😁 
+
+[03/01/2024 21:22] 0xdemonnn
+yup, i just surprise for the number of submissions
+
+
+[03/01/2024 21:23] 14si2o_flint
+Good filter to remember, find the scary codebases lol
+
+
+[03/01/2024 21:24] 0xsl1
+if its hard for you its hard for everyone so yeah
+
+
+[03/01/2024 21:24] sp1cymeatball
+Or learn rust/go/cairo
+
+
+[03/01/2024 21:25] 0xdemonnn
+So, goodluck everyone and thanks to the Spectra team for the hardwork :thankyou:
+
+{Reactions}
+❤️ 
+
+[03/01/2024 21:25] 14si2o_flint
+yeah, right between dinner & desert 😄
+
+
+[03/01/2024 21:25] dimulski
+I am surprised that someone submitted an issue, not knowing the difference between 4626 and 5095 😄
+
+{Reactions}
+😂 (3) 
+
+[03/01/2024 21:25] 14si2o_flint
+no discussing actual issues! you don't want to catch a ban
+
+
+[03/01/2024 21:26] dimulski
+if someone catches something from that sentance I think he can find much more severe issues 😄
+
+
+[03/01/2024 21:36] brivan
+Despite the fact I learned a lot of things from this protocol, like the concept of yield tokenization..etc
+One thing I learned strongly and wrote down: **Don't audit codebase that has 15x tests lines than the actual codebase**
+
+{Reactions}
+❤️ 😂 
+
+[03/01/2024 21:40] johnsmith1623
+@dimulski Congrats on your findings, nice work there. I am curious, did you write any test cases for your math related findings?
+
+
+[03/01/2024 21:47] dimulski
+I almost missed the deadlines, cuz of other things and didn’t have time to write PoCs, for some attack paths  I wrote pocs , but they turned out to he incorrect. Will see about the math stuff, hope judging is fast here
+
+{Reactions}
+👍 (2) 
+
+[03/02/2024 03:13] 0xabhay.
+@dimulski I believe that if the vaults are vulnerable to a particular issue, the protocol should aim to protect from those vaults. Because the protocol is fully dependent on ERC-4626.
+
+
+[03/02/2024 03:33] johnsmith1623
+So you think uniswap should also protect from bugged ERC20s? I don't think so. We are dependent on ERC4626 compliant contracts, if they have bugs, it is their problem. Everyone should focus on their own protocol and not try to fix others issues.
+
+{Reactions}
+🙏🏽 
+
+[03/02/2024 03:39] 0xabhay.
+@JohnSmith for example USDT has 6 decimals, there may be rounding issues, mismatch slippage issues, and problems like blacklisted addresses. Shouldn't the protocol protect against these? And if there's a hack, shouldn't users be informed that this was a problem with USDT, not my protocol?
+
+
+[03/02/2024 03:52] johnsmith1623
+https://tenor.com/view/snoop-dogg-real-the-struggle-gif-21322527
+
+{Embed}
+https://tenor.com/view/snoop-dogg-real-the-struggle-gif-21322527
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/snoop-dogg-24861.png
+
+{Reactions}
+🙏 (2) 
+
+[03/04/2024 01:41] poeaudits
+You can still be compliant to ERC4626 and create issues in the system. Could even be a non-malicious version of the vault and be invalidated by the known issues.
+
+
+[03/04/2024 04:58] sweetjimmy_
+@Yanis | Spectra how many developers worked on writing the smart contracts? I just want to get a rough idea about the manpower it needs to build a smart contracts protocol with this quality
+
+
+[03/04/2024 17:07] la_yan
+Hello there 🙂 
+To provide our vision on the latest topic in this group chat: if a vault is compliant to ERC4626 and yet creates an issue in our protocol then this is obviously considered as an issue to us. However, what we were saying is that our permissionless design requires users to make their own research before depositing funds in an investment strategy. Many integrated IBTs might be malicious (e.g. strait up adding a drawn_funds method), and as much as we'll try to monitor integrated vaults, it will be considered users fault to deposit in them. That being said, this detail will be very clearly displayed on our design, and popular vaults will probably be checked by many 🙂 Hope this clarifies the debate
+
+
+[03/04/2024 17:15] la_yan
+~10 developers worked on / tested / reviewed these smart contracts. However, the vast majority of the codebase has been written by 3 of us. It took us quite a long time though. 
+
+Once again, we are extremely grateful for all the feedback and we thank you all for your help! 🙏
+
+{Reactions}
+😮 (2) 👍 (6) 
+
+[03/04/2024 17:19] sweetjimmy_
+Thanks to you and all of spectra team too for allowing me this amazing opportunity to learn about defi space a lil bit. It was an honor to have your amazing codebase for my first-ever audit
+
+{Reactions}
+🫡 
+
+[03/04/2024 18:14] 0xabhay.
+Thanks for the clarification 🤞
+
+{Reactions}
+🫡 
+
+[03/14/2024 20:11] sweetjimmy_
+when will the results get published?
+
+{Reactions}
+🥹 
+
+[03/15/2024 14:12] 0xwsingh_63970
+https://tenor.com/view/today-james-pumphrey-donut-media-on-this-day-this-moment-gif-20028518
+
+{Embed}
+https://tenor.com/view/today-james-pumphrey-donut-media-on-this-day-this-moment-gif-20028518
+Code4rena - ARCHIVE-Q1-2024 - spectra-feb23 [1209905089121357964].txt_Files/today-james-pumphrey-0F450.png
+
+
+[03/15/2024 14:17] shubh0412
+Logo updated on profile :chefskiss:
+
+
+[03/15/2024 14:26] tigerfrake
+What's that mean? 😎
+
+
+[03/15/2024 14:39] shubh0412
+Check your Code4rena profile on official website. If you have a valid finding, the protocol's logo can be seen there a few hours before the result is announced.
+
+
+[03/15/2024 14:40] tigerfrake
+:chefskiss:
+
+
+[03/17/2024 22:04] vikqaz
+When will the results be announced?
+
+
+[03/18/2024 07:44] 0xauditism
+patience young warden
+
+{Reactions}
+🤣 (4) 
+
+[03/18/2024 10:05] vikqaz
+:chefskiss:
+
+
+[03/18/2024 16:06] thebrittfactor
+🤑 🎉 Awards for **Spectra**:
+
+$8,807.03 USDC » @Arabadzhiev
+$6,794.22 USDC » @ArmedGoose
+$6,774.64 USDC » @blutorque
+$414.48 USDC » @hunter_w3b
+$399.41 USDC » @ZanyBonzy
+$337.04 USDC » @0x11singh99
+$318.83 USDC » @myd8418
+$318.83 USDC » @Aariiif
+$272.07 USDC » @sl1
+$259.26 USDC » @K42 Ψ
+$214.03 USDC » SBSecurity (@Blckhv and @Slavcheww)
+$191.50 USDC » @Shubham
+$139.66 USDC » @Jnforja
+$107.43 USDC » @JohnSmith
+$107.43 USDC » @dimulski
+$107.43 USDC » @wangxx2026
+$103.70 USDC » @dharma09
+$100.16 USDC » @14si2o_Flint
+$84.10 USDC » DarkTower (@Kenzo, @0xrex and @haxatron)
+$80.57 USDC » @0xLogos
+$80.57 USDC » @CodeCipher
+$80.57 USDC » @auditism
+$80.57 USDC » @Limbooo
+$80.57 USDC » @erosjohn
+$80.57 USDC » @Soumen
+$73.30 USDC » @0xDemon
+$64.51 USDC » @0xbrett8571
+$53.72 USDC » @0xhacksmithh
+$53.72 USDC » @Brenzee
+$53.72 USDC » @btk
+$53.72 USDC » @lsaudit
+$53.72 USDC » @mrudenko
+$26.86 USDC » @Franklin
+$26.86 USDC » @memforvik
+$26.86 USDC » @nmirchev8
+$19.59 USDC » @0xLuckyLuke
+$19.59 USDC » @Tigerfrake
+$19.59 USDC » @cheatc0d3
+$19.59 USDC » @peanuts
+
+🏁 Findings summary
+--------------------------------------
+High risk findings: 0 unique (0 total)
+Med risk findings: 2 unique (26 total)
+Gas reports: 3 (Best: 0x11singh99)
+QA reports: 11 (Best: SBSecurity)
+
+{Reactions}
+🎉 (10) 🚀 (4) 🙏 (3) 
+
+[03/18/2024 16:06] thebrittfactor
+Advanced analysis reports: 6 (Best: hunter_w3b)
+
+Awards will be distributed on Polygon within the next week. Congratulations all! 💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+
+[03/18/2024 16:08] 0xdemonnn
+congratulations all 🎉
+
+{Reactions}
+🙏 (3) 🎉 (3) 🚀 (3) 
+
+[03/18/2024 16:33] skodinger
+nice progress @14si2o_Flint @0x11singh99
+
+{Reactions}
+🙏 (5) 
+
+[03/18/2024 16:36] 0xarmedgoose
+woooow nice congratz all
+
+{Reactions}
+hi5 (8) 
+
+[03/18/2024 16:53] 0xauditism
+gg gooze
+
+{Reactions}
+🙏 (3) 
+
+[03/18/2024 21:26] brivan
+We need to wait a month to see those 2 Meds?
+
+
+[03/19/2024 03:53] tigerfrake
+Lol.
+
+
+[03/19/2024 03:55] tigerfrake
+Checked UI, not yet updated.
+
+
+[03/19/2024 04:06] brivan
+Did not mean that, reports usually take a month to be released
+
+
+[03/19/2024 04:08] tigerfrake
+Oh right. I'm sure it's gonna be out eventually. Say, Apr
+
+
+[03/20/2024 18:54] 33audits
+Hey man sent you a fr 🙂
+
+
+[03/21/2024 22:53] vikqaz
+My finding was definitely invalidated, but where can I see the judge comments or something, this was my first submission. How can I see the reason why it was not validated?
+
+
+[03/21/2024 23:37] 0xhelium
+Impossible
+
+
+[03/21/2024 23:38] 0xhelium
+You need to wait for the report
+
+
+[03/22/2024 09:21] vikqaz
+alright so once report is published, then everyone will be able to see all the issues including invalidated ones?
+
+
+[03/22/2024 11:46] tigerfrake
+I'm sure judges are always thorough in their work so chances of your "valid" findings being invalidated unjustly is almost zero. Ain't saying it can't happen, but when it comes to vulnerabilities in this space, you can never peg your life on their validity.
+
+Do more, participate in other contests whilst waiting.
+
+{Reactions}
+💯 (4) 
+
+[03/22/2024 20:26] vikqaz
+I never said that. I just wanted to know my mistake so that I can rectify it.
+
+{Reactions}
+hi5 (2) 
+
+[03/22/2024 21:11] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted on Friday, 29 March 2024. Please make sure to grab anything you might need before then.
+
+{Reactions}
+🫡 
+
+[03/23/2024 01:13] tigerfrake
+My bad bro. I'm sure you'll get the opportunity once it's out.
+
+
+[03/23/2024 10:11] vikqaz
+thanks bro :chefskiss:
+
+
+[03/28/2024 21:24] itsmetechjay
+ℹ️ Reminder: this channel will be deleted in 24 hours.
+
+
+==============================================================
+Exported 371 message(s)
+==============================================================
